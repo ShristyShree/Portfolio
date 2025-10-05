@@ -9,7 +9,7 @@
   top: 0;
   width: 100%;
   z-index: 1000;
-  max-width: 100vw; /* ✅ Prevents any overflow */
+  max-width: 100vw;
   overflow-x: hidden;
 }
 
@@ -18,7 +18,7 @@
   font-weight: bold;
 }
 
-/* Desktop Nav Links */
+/* Desktop Links */
 .navLinks {
   list-style: none;
   display: flex;
@@ -42,6 +42,7 @@
   display: none;
   flex-direction: column;
   cursor: pointer;
+  z-index: 1001;
 }
 
 .bar,
@@ -53,11 +54,11 @@
   transition: all 0.3s ease;
 }
 
-/* Mobile View */
+/* 🔹 Mobile View */
 @media (max-width: 768px) {
   .navLinks {
     position: absolute;
-    top: 60px; /* just below navbar */
+    top: 60px; /* Below navbar */
     right: 1rem;
     background: rgba(17, 17, 17, 0.95);
     border-radius: 10px;
@@ -69,36 +70,23 @@
     transform: scaleY(0);
     transform-origin: top;
     transition: transform 0.3s ease-in-out;
-    z-index: 999;
+    z-index: 1002;
   }
 
-  .navLinks.active {
+  /* ✅ Active class for showing menu */
+  .navLinksActive {
     transform: scaleY(1);
   }
 
   .navLinks li a {
     font-size: 1rem;
     color: white;
-    text-decoration: none;
   }
 
   .hamburger {
     display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    z-index: 1001;
   }
 
-  .bar,
-  .barActive {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 4px;
-    transition: all 0.3s ease;
-  }
-
-  /* Remove body scroll lock since menu is small */
   body.menu-open {
     overflow: auto;
   }
