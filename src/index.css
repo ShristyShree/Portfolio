@@ -7,3 +7,16 @@
 html {
   scroll-behavior: smooth;
 }
+/* Prevent unwanted horizontal scroll on mobile */
+/* ✅ Prevent horizontal scrolling and white gap on mobile */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Ensure all elements respect screen width */
+* {
+  box-sizing: border-box;
+}
