@@ -6,12 +6,10 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
-    document.body.classList.toggle("menu-open", !isOpen);
   };
 
   const closeMenu = () => {
     setIsOpen(false);
-    document.body.classList.remove("menu-open");
   };
 
   return (
@@ -25,16 +23,16 @@ const Navbar = () => {
         }`}
       >
         <li><a href="#about" onClick={closeMenu}>About</a></li>
-        <li><a href="#experience" onClick={closeMenu}>Skills</a></li>
+        <li><a href="#skills" onClick={closeMenu}>Skills</a></li>
         <li><a href="#projects" onClick={closeMenu}>Projects</a></li>
         <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
       </ul>
 
       {/* Hamburger Icon */}
       <div className={styles.hamburger} onClick={toggleMenu}>
-        <div className={isOpen ? styles.barActive : styles.bar}></div>
-        <div className={isOpen ? styles.barActive : styles.bar}></div>
-        <div className={isOpen ? styles.barActive : styles.bar}></div>
+        <span className={`${styles.bar} ${isOpen ? styles.bar1 : ""}`}></span>
+        <span className={`${styles.bar} ${isOpen ? styles.bar2 : ""}`}></span>
+        <span className={`${styles.bar} ${isOpen ? styles.bar3 : ""}`}></span>
       </div>
     </nav>
   );
