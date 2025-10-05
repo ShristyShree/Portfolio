@@ -15,7 +15,7 @@
   font-weight: bold;
 }
 
-/* Nav links */
+/* Desktop Nav Links */
 .navLinks {
   list-style: none;
   display: flex;
@@ -34,7 +34,7 @@
   color: #ffcc00;
 }
 
-/* Mobile menu hidden by default */
+/* Hamburger (hidden on desktop) */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -50,20 +50,22 @@
   transition: all 0.3s ease;
 }
 
-/* Mobile view */
+/* Mobile View */
 @media (max-width: 768px) {
   .navLinks {
-    position: absolute;
-    top: 60px;
+    position: fixed;
+    top: 0;
     right: 0;
     height: 100vh;
-    width: 200px;
-    background: #222;
+    width: 75%; /* you can set to 100% if you want full-screen menu */
+    background: rgba(17, 17, 17, 0.97);
     flex-direction: column;
     align-items: center;
     justify-content: start;
-    padding-top: 3rem;
+    padding-top: 5rem;
     transform: translateX(100%);
+    transition: transform 0.4s ease-in-out;
+    z-index: 999;
   }
 
   .navLinks.active {
@@ -72,5 +74,11 @@
 
   .hamburger {
     display: flex;
+    z-index: 1001;
+  }
+
+  /* Disable scroll when menu open */
+  body.menu-open {
+    overflow: hidden;
   }
 }

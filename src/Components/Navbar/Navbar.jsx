@@ -6,21 +6,28 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    document.body.classList.toggle("menu-open", !isOpen);
+  };
+
+  // Function to close menu when a link is clicked
+  const closeMenu = () => {
+    setIsOpen(false);
+    document.body.classList.remove("menu-open");
   };
 
   return (
     <nav className={styles.navbar}>
       <div className={styles.logo}>Portfolio</div>
 
-      {/* Desktop Links */}
+      {/* Nav Links */}
       <ul className={`${styles.navLinks} ${isOpen ? styles.active : ""}`}>
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about" onClick={closeMenu}>About</a></li>
+        <li><a href="#experience" onClick={closeMenu}>Skills</a></li>
+        <li><a href="#projects" onClick={closeMenu}>Projects</a></li>
+        <li><a href="#contact" onClick={closeMenu}>Contact</a></li>
       </ul>
 
-      {/* Hamburger */}
+      {/* Hamburger Icon */}
       <div className={styles.hamburger} onClick={toggleMenu}>
         <div className={isOpen ? styles.barActive : styles.bar}></div>
         <div className={isOpen ? styles.barActive : styles.bar}></div>
