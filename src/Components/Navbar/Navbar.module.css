@@ -53,32 +53,50 @@
 /* Mobile View */
 @media (max-width: 768px) {
   .navLinks {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 75%; /* you can set to 100% if you want full-screen menu */
-    background: rgba(17, 17, 17, 0.97);
+    position: absolute;
+    top: 60px; /* just below navbar */
+    right: 1rem;
+    background: rgba(17, 17, 17, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
     flex-direction: column;
-    align-items: center;
-    justify-content: start;
-    padding-top: 5rem;
-    transform: translateX(100%);
-    transition: transform 0.4s ease-in-out;
+    align-items: flex-start;
+    padding: 1rem 1.5rem;
+    gap: 1rem;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.3s ease-in-out;
     z-index: 999;
   }
 
   .navLinks.active {
-    transform: translateX(0);
+    transform: scaleY(1);
+  }
+
+  .navLinks li a {
+    font-size: 1rem;
+    color: white;
+    text-decoration: none;
   }
 
   .hamburger {
     display: flex;
+    flex-direction: column;
+    cursor: pointer;
     z-index: 1001;
   }
 
-  /* Disable scroll when menu open */
+  .bar,
+  .barActive {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px;
+    transition: all 0.3s ease;
+  }
+
+  /* Remove body scroll lock since menu is small */
   body.menu-open {
-    overflow: hidden;
+    overflow: auto;
   }
 }
