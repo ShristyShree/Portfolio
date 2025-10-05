@@ -1,8 +1,8 @@
 .container {
-  max-width: 1100px; /* Smaller, centered box */
+  max-width: 1100px;
   margin: 4rem auto;
   padding: 3rem;
-  background: rgba(0, 0, 0, 0.85); /* Glass effect */
+  background: rgba(0, 0, 0, 0.85);
   border-radius: 16px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
@@ -44,7 +44,7 @@
 
 .text {
   flex: 2;
-  color: #f1f5f9; /* Bright white text */
+  color: #f1f5f9;
   font-size: 1.1rem;
   line-height: 1.8;
   font-family: "Poppins", sans-serif;
@@ -52,4 +52,33 @@
 
 .text p {
   margin-bottom: 1.2rem;
+}
+
+/* 🔹 Mobile Responsive Fix */
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+
+  .content {
+    flex-direction: column; /* stack vertically */
+    text-align: center;
+  }
+
+  .imageContainer {
+    order: -1; /* show image first (optional) */
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .imageContainer img {
+    width: 80%;
+    max-width: 300px;
+  }
+
+  .text {
+    flex: unset;
+    font-size: 1rem;
+  }
 }
