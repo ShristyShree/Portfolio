@@ -15,7 +15,7 @@ const skills = [
 
 const Experience = () => {
   return (
-    <section id="experience" className={styles.container}>
+    <section id="skills" className={styles.container}>
       <div className={styles.box}>
         <h2 className={styles.title}>Skills</h2>
         <div className={styles.skillsGrid}>
