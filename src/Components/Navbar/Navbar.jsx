@@ -33,6 +33,7 @@ const Navbar = () => {
         <span className={`${styles.bar} ${isOpen ? styles.bar1 : ""}`}></span>
         <span className={`${styles.bar} ${isOpen ? styles.bar2 : ""}`}></span>
         <span className={`${styles.bar} ${isOpen ? styles.bar3 : ""}`}></span>
+        <span className={`${styles.bar} ${isOpen ? styles.bar3 : ""}`}></span>
       </div>
     </nav>
   );
